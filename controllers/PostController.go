@@ -27,7 +27,6 @@ func CreatePost(context *gin.Context) {
 	}
 
 	post := models.Post{
-		UserID:   0,
 		Title:    PostRequest.Title,
 		Content:  PostRequest.Content,
 		Category: PostRequest.Category,
@@ -51,7 +50,7 @@ func CreatePost(context *gin.Context) {
 }
 
 func FindAllPosts(context *gin.Context) {
-	perPage := 5
+	perPage := 6
 	page := 1
 	pageStr := context.Param("page")
 
@@ -113,4 +112,17 @@ func DeletePost(context *gin.Context) {
 	initializers.DB.Delete(&models.Post{}, postID)
 
 	context.JSON(http.StatusOK, gin.H{"message": "Delete Success"})
+}
+
+func TrashedPost(context *gin.Context) {
+	postID := context.Param("id")
+
+	var post models.Post
+	initializers.DB.First(&post, postID)
+
+	initializers.DB.Model(&post).Updates(models.Post{
+		Status: "trash",
+	})
+
+	context.JSON(http.StatusOK, gin.H{"message": "Post Trashed Success"})
 }

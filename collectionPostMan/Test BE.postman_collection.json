@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "77cbb748-beda-4da9-bb3f-978355945fd5",
+		"name": "Test BE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26936322"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Test Title 6Test Title 6Test Title 6Test Title 77\",\r\n    \"content\": \"Test Content 6Test Content 6Test Content 6Test Content 6Test Content 6Test Content 6Test Content 6Test Content 6Test Content 6Test Content 6Test Content 6Test Content 6Test Content 6Test Content 6Test Content 6Test Content 6Test Content 6Test Content 6\",\r\n    \"category\": \"Test Category 6\",\r\n    \"status\": \"publish\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:2024/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "2024",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:2024/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "2024",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Posts with Pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:2024/posts/page/2",
+							"host": [
+								"localhost"
+							],
+							"port": "2024",
+							"path": [
+								"posts",
+								"page",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:2024/posts/8",
+							"host": [
+								"localhost"
+							],
+							"port": "2024",
+							"path": [
+								"posts",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Test Title 1 EditedTest Title 1 EditedTest Title 1 EditedTest Title 1 EditedTest Title 1 EditedTest Title 1 EditedTest Title 1 EditedTest Title 1 EditedTest Title 1 EditedTest Title 1 Edited\",\r\n    \"content\": \"Test Content 1 EditedTest Content 1 EditedTest Content 1 EditedTest Content 1 EditedTest Content 1 EditedTest Content 1 EditedTest Content 1 EditedTest Content 1 EditedTest Content 1 EditedTest Content 1 Edited\",\r\n    \"category\": \"Test Category 1 Edited\",\r\n    \"status\": \"publish\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:2024/posts/8",
+							"host": [
+								"localhost"
+							],
+							"port": "2024",
+							"path": [
+								"posts",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update to Trashed Post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Test Title 1 EditedTest Title 1 EditedTest Title 1 EditedTest Title 1 EditedTest Title 1 EditedTest Title 1 EditedTest Title 1 EditedTest Title 1 EditedTest Title 1 EditedTest Title 1 Edited\",\r\n    \"content\": \"Test Content 1 EditedTest Content 1 EditedTest Content 1 EditedTest Content 1 EditedTest Content 1 EditedTest Content 1 EditedTest Content 1 EditedTest Content 1 EditedTest Content 1 EditedTest Content 1 Edited\",\r\n    \"category\": \"Test Category 1 Edited\",\r\n    \"status\": \"publish\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:2024/posts/8",
+							"host": [
+								"localhost"
+							],
+							"port": "2024",
+							"path": [
+								"posts",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:2024/posts/8",
+							"host": [
+								"localhost"
+							],
+							"port": "2024",
+							"path": [
+								"posts",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
