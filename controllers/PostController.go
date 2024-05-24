@@ -61,7 +61,7 @@ func FindAllPosts(context *gin.Context) {
 	pagination := helpers.GetPaginationData(page, perPage, models.Post{})
 
 	var posts []models.Post
-	initializers.DB.Limit(perPage).Offset(pagination.Offset).Find(&posts)
+	initializers.DB.Limit(perPage).Offset(pagination.Offset).Order("created_at desc").Find(&posts)
 
 	context.JSON(http.StatusOK, gin.H{
 		"data_posts": posts,
